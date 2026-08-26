@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro
+package br.com.fiap.peego
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

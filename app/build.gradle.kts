@@ -6,12 +6,11 @@ plugins {
 }
 
 android {
-    // TROCAR o nome do projeto aqui se decidirem outro nome do app
-    namespace = "br.com.fiap.acessabanheiro"
+    namespace = "br.com.fiap.peego"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "br.com.fiap.acessabanheiro"
+        applicationId ="br.com.fiap.peego"
         minSdk = 26
         targetSdk = 37
         versionCode = 1

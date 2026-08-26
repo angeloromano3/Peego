@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "551892991670",
-    "project_id": "acessabanheiro",
-    "storage_bucket": "acessabanheiro.firebasestorage.app"
+    "project_number": "365006089105",
+    "project_id": "peego-7fefb",
+    "storage_bucket": "peego-7fefb.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:551892991670:android:1ad10cf6c7068a7cde3017",
+        "mobilesdk_app_id": "1:365006089105:android:0955fca56de8de96fdc830",
         "android_client_info": {
-          "package_name": "br.com.fiap.acessabanheiro"
+          "package_name": "br.com.fiap.peego"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDJqaG84aRKbttGYN2qWHyRVzPiymggByw"
+          "current_key": "AIzaSyD-So3YsqgNJ0UUlr1hmJQoHj4avg9-hOY"
         }
       ],
       "services": {

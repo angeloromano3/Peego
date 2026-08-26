@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro.ui.theme
+package br.com.fiap.peego.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

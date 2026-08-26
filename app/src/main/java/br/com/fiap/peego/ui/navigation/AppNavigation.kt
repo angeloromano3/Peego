@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro.ui.navigation
+package br.com.fiap.peego.ui.navigation
 
 import android.widget.Toast
 import androidx.compose.runtime.Composable
@@ -7,9 +7,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import br.com.fiap.acessabanheiro.ui.screens.CreateAccountScreen
-import br.com.fiap.acessabanheiro.ui.screens.LocationPermissionScreen
-import br.com.fiap.acessabanheiro.ui.screens.LoginScreen
+import br.com.fiap.peego.ui.screens.CreateAccountScreen
+import br.com.fiap.peego.ui.screens.LocationPermissionScreen
+import br.com.fiap.peego.ui.screens.LoginScreen
 import com.google.firebase.auth.FirebaseAuth
 
 object Rotas {

@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro
+package br.com.fiap.peego
 
 import org.junit.Test
 

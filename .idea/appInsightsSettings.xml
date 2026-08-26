@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="br.com.fiap.acessabanheiro" />
-                  <option name="mobileSdkAppId" value="1:551892991670:android:1ad10cf6c7068a7cde3017" />
-                  <option name="projectId" value="acessabanheiro" />
-                  <option name="projectNumber" value="551892991670" />
+                  <option name="appId" value="br.com.fiap.peego" />
+                  <option name="mobileSdkAppId" value="1:365006089105:android:0955fca56de8de96fdc830" />
+                  <option name="projectId" value="peego-7fefb" />
+                  <option name="projectNumber" value="365006089105" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

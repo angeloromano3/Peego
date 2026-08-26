@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro
+package br.com.fiap.peego
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -8,8 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import br.com.fiap.acessabanheiro.ui.navigation.AppNavigation
-import br.com.fiap.acessabanheiro.ui.theme.AcessaBanheiroTheme
+import br.com.fiap.peego.ui.navigation.AppNavigation
+import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

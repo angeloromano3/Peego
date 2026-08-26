@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro.ui.theme
+package br.com.fiap.peego.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

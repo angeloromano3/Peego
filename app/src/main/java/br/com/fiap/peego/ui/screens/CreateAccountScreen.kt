@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro.ui.screens
+package br.com.fiap.peego.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -21,10 +21,10 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.fiap.acessabanheiro.ui.theme.AcessaBanheiroTheme
-import br.com.fiap.acessabanheiro.ui.theme.FundoMenta
-import br.com.fiap.acessabanheiro.ui.theme.VerdePrimario
-import br.com.fiap.acessabanheiro.ui.theme.TextoSecundario
+import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
+import br.com.fiap.peego.ui.theme.FundoMenta
+import br.com.fiap.peego.ui.theme.VerdePrimario
+import br.com.fiap.peego.ui.theme.TextoSecundario
 
 @Composable
 fun CreateAccountScreen(
