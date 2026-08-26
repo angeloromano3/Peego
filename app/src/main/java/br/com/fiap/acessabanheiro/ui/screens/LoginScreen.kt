@@ -67,7 +67,7 @@ fun LoginScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "AcessaBanheiro", // TROCAR quando o grupo decidir o nome final
+            text = "PeeGo",
             style = MaterialTheme.typography.titleLarge,
             color = VerdePrimario
         )

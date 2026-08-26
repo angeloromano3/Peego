@@ -100,7 +100,7 @@ fun CreateAccountScreen(
                     color = VerdePrimario
                 )
                 Text(
-                    text = "Crie sua conta para começar a usar o AcessaBanheiro", // TROCAR quando o grupo decidir o nome final
+                    text = "Crie sua conta para começar a usar o PeeGo",
                     fontSize = 13.sp,
                     color = TextoSecundario
                 )
