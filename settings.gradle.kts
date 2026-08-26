@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AcessaBanheiro"
+rootProject.name = "PeeGo"
 include(":app")
