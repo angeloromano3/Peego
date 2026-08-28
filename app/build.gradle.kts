@@ -47,6 +47,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.core.ktx)
     implementation("androidx.navigation:navigation-compose:2.8.5")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     // Firebase (Auth - email/senha e Google)
     implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
@@ -73,8 +75,6 @@ dependencies {
     // Coil - carrega imagens de URL (usado no AsyncImage do banner da tela)
     implementation("io.coil-kt:coil-compose:2.6.0")
 
-    // Ícones extras do Material (ex: CheckCircle, LocationOn, Star)
-    // O pacote padrão do Compose só vem com um conjunto básico de ícones
-    implementation("androidx.compose.material:material-icons-extended:1.6.8")
+
 
 }

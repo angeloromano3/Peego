@@ -12,7 +12,20 @@
           "package_name": "br.com.fiap.peego"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "365006089105-fjo9kctvengnt7rkqvoc9n16dhn84rtd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.fiap.peego",
+            "certificate_hash": "72418911e4a43e59e3cefdbe1ea35b0ab1424c8c"
+          }
+        },
+        {
+          "client_id": "365006089105-8opvvkrdhnvkagbomg39hf2vf7mljhq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD-So3YsqgNJ0UUlr1hmJQoHj4avg9-hOY"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365006089105-8opvvkrdhnvkagbomg39hf2vf7mljhq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
