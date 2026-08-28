@@ -11,13 +11,16 @@ import br.com.fiap.peego.ui.screens.CreateAccountScreen
 import br.com.fiap.peego.ui.screens.LocationPermissionScreen
 import br.com.fiap.peego.ui.screens.LoginScreen
 import com.google.firebase.auth.FirebaseAuth
+import br.com.fiap.peego.model.BathroomDetail
+import br.com.fiap.peego.model.CondicoesRecentes
+import br.com.fiap.peego.model.Informacoes
+import br.com.fiap.peego.ui.screens.bathroomdetail.BathroomDetailScreen
 
 object Rotas {
     const val LOGIN = "login"
-
     const val CRIAR_CONTA = "criarconta"
-
     const val PERMISSAO_LOCALIZACAO = "permissao_localizacao"
+    const val DETALHES_BANHEIRO = "detalhes_banheiro"
 }
 
 @Composable
@@ -97,12 +100,34 @@ fun AppNavigation(modifier: Modifier = Modifier) {
         composable(Rotas.PERMISSAO_LOCALIZACAO) {
             LocationPermissionScreen(
                 permitirLocalizacao = {
-                    // TODO: pedir permissão real (ActivityResultContracts.RequestPermission())
-                    //   e navegar pra Home quando ela existir
+                    navController.navigate(Rotas.DETALHES_BANHEIRO)
                 },
                 buscarPorEndereco = {
-                    // TODO: navegar pra Home quando ela existir (modo busca manual)
+                    navController.navigate(Rotas.DETALHES_BANHEIRO)
                 }
+            )
+        }
+        composable(Rotas.DETALHES_BANHEIRO) {
+            BathroomDetailScreen(
+                detalhe = BathroomDetail(
+                    nome = "Extra Mercado - Campo Limpo",
+                    avaliacao = 4.8,
+                    quantidadeAvaliacoes = 124,
+                    distancia = "120 m",
+                    aberto = true,
+                    imagemUrl = "",
+                    acessibilidade = listOf(),
+                    inclusao = listOf(),
+                    condicoesRecentes = CondicoesRecentes(
+                        limpeza = "Boa", seguranca = "Boa", iluminacao = "Boa",
+                        aguaDisponivel = "Sim", atualizadoHaTempo = "há 2 horas"
+                    ),
+                    informacoes = Informacoes(
+                        funcionamento = "06h–22h", gratuito = true,
+                        localizacao = "Parque Ibirapuera — Portão 3"
+                    )
+                ),
+                voltar = { navController.popBackStack() }
             )
         }
 

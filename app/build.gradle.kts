@@ -69,4 +69,12 @@ dependencies {
 
     // Debug
     debugImplementation(libs.androidx.compose.ui.tooling)
+
+    // Coil - carrega imagens de URL (usado no AsyncImage do banner da tela)
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // Ícones extras do Material (ex: CheckCircle, LocationOn, Star)
+    // O pacote padrão do Compose só vem com um conjunto básico de ícones
+    implementation("androidx.compose.material:material-icons-extended:1.6.8")
+
 }
