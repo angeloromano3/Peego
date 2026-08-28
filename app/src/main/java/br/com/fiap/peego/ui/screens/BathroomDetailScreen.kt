@@ -48,18 +48,6 @@ fun BathroomDetailScreen(
                     }
                 }
             )
-        },
-        bottomBar = {
-            Surface(shadowElevation = 8.dp) {
-                Button(
-                    onClick = avaliarBanheiro,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp)
-                ) {
-                    Text("Avaliar banheiro")
-                }
-            }
         }
     ) { padding ->
         Column(
@@ -97,16 +85,34 @@ fun BathroomDetailScreen(
             }
 
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(
-                    Icons.Default.CheckCircle,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.size(16.dp)
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(if (detalhe.aberto) "Aberto agora" else "Fechado")
+                Surface(
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.12f),
+                    shape = RoundedCornerShape(50),
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
+                    ) {
+                        Icon(
+                            Icons.Default.CheckCircle,
+                            contentDescription = null,
+                            tint = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = if (detalhe.aberto) "Aberto agora" else "Fechado",
+                            color = MaterialTheme.colorScheme.primary,
+                            style = MaterialTheme.typography.labelSmall
+                        )
+                    }
+                }
                 Spacer(modifier = Modifier.width(8.dp))
-                Text("· ${detalhe.distancia} de distância")
+                Text(
+                    text = "· ${detalhe.distancia} de distância",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             }
 
             Spacer(modifier = Modifier.height(12.dp))
