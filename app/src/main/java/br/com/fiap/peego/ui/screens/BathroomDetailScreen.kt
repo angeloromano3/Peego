@@ -1,5 +1,6 @@
 package br.com.fiap.peego.ui.screens.bathroomdetail
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -201,13 +202,16 @@ fun BathroomDetailScreen(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            OutlinedButton(
+            Button(
                 onClick = avaliarBanheiro,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
             ) {
                 Text("Avaliar banheiro")
             }
-
             Spacer(modifier = Modifier.height(24.dp))
         }
     }
@@ -223,7 +227,9 @@ private fun InfoCard(
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
-        )
+        ),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary)
+
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
