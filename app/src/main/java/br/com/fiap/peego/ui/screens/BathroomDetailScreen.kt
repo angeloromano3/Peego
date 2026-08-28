@@ -1,5 +1,6 @@
 package br.com.fiap.peego.ui.screens.bathroomdetail
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,14 +16,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.fiap.peego.R
 import br.com.fiap.peego.model.BathroomDetail
 import br.com.fiap.peego.model.CondicoesRecentes
 import br.com.fiap.peego.model.Informacoes
+import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
 import coil.compose.AsyncImage
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,6 +40,7 @@ fun BathroomDetailScreen(
     irAgora: () -> Unit = {}
 ) {
     Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = {
             TopAppBar(
                 title = { Text("Detalhes do banheiro") },
@@ -56,9 +63,10 @@ fun BathroomDetailScreen(
                 .verticalScroll(rememberScrollState())
                 .padding(horizontal = 16.dp)
         ) {
-            AsyncImage(
-                model = detalhe.imagemUrl,
+            Image(
+                painter = painterResource(id = R.drawable.mercado_extra),
                 contentDescription = detalhe.nome,
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(160.dp)
@@ -154,7 +162,7 @@ fun BathroomDetailScreen(
                 Row(modifier = Modifier.fillMaxWidth()) {
                     Column(modifier = Modifier.weight(1f)) {
                         LinhaInfo(Icons.Default.CleaningServices, "Limpeza: ${c.limpeza}")
-                        LinhaInfo(Icons.Default.WaterDrop, "Iluminação: ${c.iluminacao}")
+                        LinhaInfo(Icons.Default.Lightbulb, "Iluminação: ${c.iluminacao}")
                     }
                     Column(modifier = Modifier.weight(1f)) {
                         LinhaInfo(Icons.Default.Shield, "Segurança: ${c.seguranca}")
@@ -186,7 +194,9 @@ fun BathroomDetailScreen(
             Text(
                 text = "Já utilizou este banheiro?",
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.fillMaxWidth()
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -210,7 +220,10 @@ private fun InfoCard(
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(12.dp)
+        shape = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surface
+        )
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Text(
@@ -244,28 +257,30 @@ private fun LinhaInfo(icone: ImageVector, texto: String) {
 @Preview(showBackground = true)
 @Composable
 private fun BathroomDetailScreenPreview() {
-    BathroomDetailScreen(
-        detalhe = BathroomDetail(
-            nome = "Extra Mercado - Campo Limpo",
-            avaliacao = 4.8,
-            quantidadeAvaliacoes = 124,
-            distancia = "120 m",
-            aberto = true,
-            imagemUrl = "",
-            acessibilidade = listOf(),
-            inclusao = listOf(),
-            condicoesRecentes = CondicoesRecentes(
-                limpeza = "Boa",
-                seguranca = "Boa",
-                iluminacao = "Boa",
-                aguaDisponivel = "Sim",
-                atualizadoHaTempo = "há 2 horas"
-            ),
-            informacoes = Informacoes(
-                funcionamento = "06h–22h",
-                gratuito = true,
-                localizacao = "Parque Ibirapuera — Portão 3"
+    AcessaBanheiroTheme {
+        BathroomDetailScreen(
+            detalhe = BathroomDetail(
+                nome = "Extra Mercado - Campo Limpo",
+                avaliacao = 4.8,
+                quantidadeAvaliacoes = 124,
+                distancia = "120 m",
+                aberto = true,
+                imagemUrl = "",
+                acessibilidade = listOf(),
+                inclusao = listOf(),
+                condicoesRecentes = CondicoesRecentes(
+                    limpeza = "Boa",
+                    seguranca = "Boa",
+                    iluminacao = "Boa",
+                    aguaDisponivel = "Sim",
+                    atualizadoHaTempo = "há 2 horas"
+                ),
+                informacoes = Informacoes(
+                    funcionamento = "06h–22h",
+                    gratuito = true,
+                    localizacao = "Parque Ibirapuera — Portão 3"
+                )
             )
         )
-    )
+    }
 }
