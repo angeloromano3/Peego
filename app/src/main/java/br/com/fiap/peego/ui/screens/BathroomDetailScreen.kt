@@ -27,8 +27,7 @@ import br.com.fiap.peego.R
 import br.com.fiap.peego.model.BathroomDetail
 import br.com.fiap.peego.model.CondicoesRecentes
 import br.com.fiap.peego.model.Informacoes
-import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
-import coil.compose.AsyncImage
+import br.com.fiap.peego.ui.theme.PeeGoTheme
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -263,7 +262,7 @@ private fun LinhaInfo(icone: ImageVector, texto: String) {
 @Preview(showBackground = true)
 @Composable
 private fun BathroomDetailScreenPreview() {
-    AcessaBanheiroTheme {
+    PeeGoTheme {
         BathroomDetailScreen(
             detalhe = BathroomDetail(
                 nome = "Extra Mercado - Campo Limpo",

@@ -21,7 +21,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
+import br.com.fiap.peego.ui.theme.PeeGoTheme
 import br.com.fiap.peego.ui.theme.FundoMenta
 import br.com.fiap.peego.ui.theme.VerdePrimario
 import br.com.fiap.peego.ui.theme.TextoSecundario
@@ -263,7 +263,7 @@ fun CreateAccountScreen(
 @Preview(showBackground = false)
 @Composable
 private fun CreateAccountScreenPreview() {
-    AcessaBanheiroTheme {
+    PeeGoTheme {
         CreateAccountScreen()
     }
 }

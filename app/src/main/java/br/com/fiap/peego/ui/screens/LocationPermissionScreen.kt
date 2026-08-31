@@ -17,7 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
+import br.com.fiap.peego.ui.theme.PeeGoTheme
 import br.com.fiap.peego.ui.theme.FundoMenta
 import br.com.fiap.peego.ui.theme.VerdePrimario
 import br.com.fiap.peego.ui.theme.TextoPrimario
@@ -114,7 +114,7 @@ fun LocationPermissionScreen(
 @Preview(showBackground = true)
 @Composable
 private fun LocationPermissionScreenPreview() {
-    AcessaBanheiroTheme {
+    PeeGoTheme {
         LocationPermissionScreen()
     }
 }

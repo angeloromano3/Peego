@@ -23,7 +23,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
+import br.com.fiap.peego.ui.theme.PeeGoTheme
 import br.com.fiap.peego.ui.theme.BordaClara
 import br.com.fiap.peego.ui.theme.CardBranco
 import br.com.fiap.peego.ui.theme.FundoMenta
@@ -248,7 +248,7 @@ private fun FiltroCard(
 @Preview(showBackground = true)
 @Composable
 private fun FilterScreenPreview() {
-    AcessaBanheiroTheme {
+    PeeGoTheme {
         FilterScreen()
     }
 }

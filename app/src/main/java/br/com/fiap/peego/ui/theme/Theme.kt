@@ -32,7 +32,7 @@ private val EsquemaCoresClaro = lightColorScheme(
 )
 
 @Composable
-fun AcessaBanheiroTheme(
+fun PeeGoTheme(
     temaEscuro: Boolean = isSystemInDarkTheme(),
     // Desativado por padrão: o app tem paleta própria (verde-petróleo/menta),
     // não queremos que o Android 12+ substitua pelas cores do papel de parede do usuário
