@@ -1,4 +1,4 @@
-package br.com.fiap.acessabanheiro.ui.screens
+package br.com.fiap.peego.ui.screens
 import androidx.compose.foundation.border
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.background
@@ -23,13 +23,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.fiap.acessabanheiro.ui.theme.AcessaBanheiroTheme
-import br.com.fiap.acessabanheiro.ui.theme.BordaClara
-import br.com.fiap.acessabanheiro.ui.theme.CardBranco
-import br.com.fiap.acessabanheiro.ui.theme.FundoMenta
-import br.com.fiap.acessabanheiro.ui.theme.TextoPrimario
-import br.com.fiap.acessabanheiro.ui.theme.TextoSecundario
-import br.com.fiap.acessabanheiro.ui.theme.VerdePrimario
+import br.com.fiap.peego.ui.theme.AcessaBanheiroTheme
+import br.com.fiap.peego.ui.theme.BordaClara
+import br.com.fiap.peego.ui.theme.CardBranco
+import br.com.fiap.peego.ui.theme.FundoMenta
+import br.com.fiap.peego.ui.theme.TextoPrimario
+import br.com.fiap.peego.ui.theme.TextoSecundario
+import br.com.fiap.peego.ui.theme.VerdePrimario
 
 // A navegação entre MapScreen e FilterScreen será conectada
 // no AppNavigation quando a tela de mapa estiver disponível.
