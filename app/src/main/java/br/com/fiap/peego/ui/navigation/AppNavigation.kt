@@ -20,12 +20,14 @@ import br.com.fiap.peego.model.BathroomDetail
 import br.com.fiap.peego.model.CondicoesRecentes
 import br.com.fiap.peego.model.Informacoes
 import br.com.fiap.peego.ui.screens.bathroomdetail.BathroomDetailScreen
+import br.com.fiap.peego.ui.screens.avaliacao.AvaliacaoScreen
 
 object Rotas {
     const val LOGIN = "login"
     const val CRIAR_CONTA = "criarconta"
     const val PERMISSAO_LOCALIZACAO = "permissao_localizacao"
     const val DETALHES_BANHEIRO = "detalhes_banheiro"
+    const val AVALIACAO = "avaliacao"
 }
 
 @Composable
@@ -151,7 +153,19 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                         localizacao = "Parque Ibirapuera — Portão 3"
                     )
                 ),
-                voltar = { navController.popBackStack() }
+                voltar = { navController.popBackStack() },
+                avaliarBanheiro = { navController.navigate(Rotas.AVALIACAO) }
+            )
+        }
+
+        composable(Rotas.AVALIACAO) {
+            AvaliacaoScreen(
+                nomeBanheiro = "Banheiro Extra Mercado - Campo Limpo",
+                voltar = { navController.popBackStack() },
+                aoPublicar = { _, _, _, _, _ ->
+                    Toast.makeText(context, "Avaliação publicada. Obrigado!", Toast.LENGTH_SHORT).show()
+                    navController.popBackStack()
+                }
             )
         }
 
