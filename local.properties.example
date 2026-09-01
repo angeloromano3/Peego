@@ -1,0 +1,10 @@
+# Este é só um EXEMPLO. Não use este arquivo diretamente.
+#
+# No seu projeto real, abra o arquivo "local.properties" (que já existe
+# na raiz do projeto e já tem a linha sdk.dir=... preenchida pelo Android
+# Studio) e ACRESCENTE a linha abaixo no final dele, com a sua chave:
+#
+# MAPTILER_API_KEY=sua_chave_do_maptiler_aqui
+#
+# Não apague a linha sdk.dir que já está lá — só adicione a linha nova
+# embaixo. Depois, sincronize o Gradle (ícone do elefante) e rode o app.

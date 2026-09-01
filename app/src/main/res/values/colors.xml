@@ -1,0 +1,13 @@
+<resources>
+    <color name="teal_primary">#0F6B5C</color>
+    <color name="teal_dark">#0B4F44</color>
+    <color name="green_open">#1D8348</color>
+    <color name="tag_green_bg">#DFF3E6</color>
+    <color name="tag_green_text">#1D8348</color>
+    <color name="tag_gray_bg">#EDEDED</color>
+    <color name="tag_gray_text">#5F5F5F</color>
+    <color name="star_yellow">#F5A623</color>
+    <color name="background">#FFFFFF</color>
+    <color name="text_primary">#1B1B1B</color>
+    <color name="text_secondary">#7A7A7A</color>
+</resources>

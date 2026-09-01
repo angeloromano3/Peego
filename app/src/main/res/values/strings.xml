@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PeeGo</string>
+    <string name="search_hint">Onde você precisa ir?</string>
+    <string name="nearby_bathrooms">Banheiros próximos</string>
+    <string name="listar">Listar</string>
+    <string name="explorar">Explorar</string>
+    <string name="lista">Lista</string>
+    <string name="contribuir">Contribuir</string>
+</resources>
