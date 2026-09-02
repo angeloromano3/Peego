@@ -8,20 +8,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import br.com.fiap.peego.ui.screens.CreateAccountScreen
 import br.com.fiap.peego.ui.screens.LocationPermissionScreen
 import br.com.fiap.peego.ui.screens.LoginScreen
 import br.com.fiap.peego.ui.viewmodel.AuthUiState
 import br.com.fiap.peego.ui.viewmodel.AuthViewModel
-import br.com.fiap.peego.model.BathroomDetail
-import br.com.fiap.peego.model.CondicoesRecentes
-import br.com.fiap.peego.model.Informacoes
+import br.com.fiap.peego.model.paraDetail
 import br.com.fiap.peego.ui.screens.bathroomdetail.BathroomDetailScreen
 import br.com.fiap.peego.ui.screens.avaliacao.AvaliacaoScreen
 import br.com.fiap.peego.ui.screens.explore.ExploreScreen
+import br.com.fiap.peego.ui.screens.explore.ExploreViewModel
 import br.com.fiap.peego.ui.screens.lista.ListaScreen
 import br.com.fiap.peego.ui.screens.contribuir.ContribuirScreen
 import br.com.fiap.peego.ui.screens.FilterScreen
@@ -145,29 +146,23 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                 }
             )
         }
-        composable(Rotas.DETALHES_BANHEIRO) {
-            BathroomDetailScreen(
-                detalhe = BathroomDetail(
-                    nome = "Extra Mercado - Campo Limpo",
-                    avaliacao = 4.8,
-                    quantidadeAvaliacoes = 124,
-                    distancia = "120 m",
-                    aberto = true,
-                    imagemUrl = "",
-                    acessibilidade = listOf(),
-                    inclusao = listOf(),
-                    condicoesRecentes = CondicoesRecentes(
-                        limpeza = "Boa", seguranca = "Boa", iluminacao = "Boa",
-                        aguaDisponivel = "Sim", atualizadoHaTempo = "há 2 horas"
-                    ),
-                    informacoes = Informacoes(
-                        funcionamento = "06h–22h", gratuito = true,
-                        localizacao = "Parque Ibirapuera — Portão 3"
-                    )
-                ),
-                voltar = { navController.popBackStack() },
-                avaliarBanheiro = { navController.navigate(Rotas.AVALIACAO) }
-            )
+
+        composable(
+            route = "${Rotas.DETALHES_BANHEIRO}/{bathroomId}",
+            arguments = listOf(navArgument("bathroomId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val bathroomId = backStackEntry.arguments?.getString("bathroomId")
+            val exploreViewModel: ExploreViewModel = viewModel()
+            val uiState by exploreViewModel.uiState.collectAsState()
+            val bathroom = uiState.bathrooms.find { it.id == bathroomId }
+
+            if (bathroom != null) {
+                BathroomDetailScreen(
+                    detalhe = bathroom.paraDetail(),
+                    voltar = { navController.popBackStack() },
+                    avaliarBanheiro = { navController.navigate(Rotas.AVALIACAO) }
+                )
+            }
         }
 
         composable(Rotas.AVALIACAO) {

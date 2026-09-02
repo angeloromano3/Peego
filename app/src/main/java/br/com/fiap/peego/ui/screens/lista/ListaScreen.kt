@@ -48,7 +48,10 @@ fun ListaScreen(
             contentPadding = PaddingValues(vertical = 16.dp)
         ) {
             items(uiState.bathrooms) { bathroom ->
-                BathroomListItem(bathroom = bathroom)
+                BathroomListItem(
+                    bathroom = bathroom,
+                    onClick = { navController.navigate("detalhes_banheiro/${bathroom.id}") }
+                )
             }
         }
     }
