@@ -1,6 +1,7 @@
 package br.com.fiap.peego.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -22,9 +23,10 @@ import br.com.fiap.peego.R
 import br.com.fiap.peego.model.Bathroom
 
 @Composable
-fun BathroomListItem(bathroom: Bathroom, modifier: Modifier = Modifier) {
+fun BathroomListItem(bathroom: Bathroom, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     Row(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth()
+            .clickable(onClick = onClick),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
