@@ -57,9 +57,9 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:21.3.0")
 
     // Room (cache local + reports)
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.8.3")
+    implementation("androidx.room:room-ktx:2.8.3")
+    ksp("androidx.room:room-compiler:2.8.3")
 
     // Retrofit (Overpass API - OpenStreetMap)
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
@@ -74,7 +74,5 @@ dependencies {
 
     // Coil - carrega imagens de URL (usado no AsyncImage do banner da tela)
     implementation("io.coil-kt:coil-compose:2.6.0")
-
-
 
 }

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">PeeGo</string>
+    <string name="search_hint">¿Adónde necesitas ir?</string>
+    <string name="nearby_bathrooms">Baños cercanos</string>
+    <string name="listar">Listar</string>
+    <string name="explorar">Explorar</string>
+    <string name="lista">Lista</string>
+    <string name="contribuir">Contribuir</string>
+    <string name="contribuir_title">Agregar un Baño</string>
+    <string name="contribuir_nome_label">Nombre del baño</string>
+    <string name="contribuir_endereco_label">Dirección</string>
+    <string name="contribuir_acessivel">Accesible</string>
+    <string name="contribuir_gratuito">Gratuito</string>
+    <string name="contribuir_foto_label">Agregar una foto</string>
+    <string name="contribuir_enviar">Enviar</string>
+    <string name="aberto_agora">Abierto ahora</string>
+    <string name="fechado">Cerrado</string>
+    <string name="acessivel">Accesible</string>
+    <string name="gratuito">Gratuito</string>
+    <string name="pago">Pago</string>
+    <string name="minha_localizacao">Mi ubicación</string>
+    <string name="filtros">Filtros</string>
+</resources>
