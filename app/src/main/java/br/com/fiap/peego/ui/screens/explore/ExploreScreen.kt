@@ -70,7 +70,7 @@ fun ExploreScreen(
             TopSearchBar(
                 query = uiState.query,
                 onQueryChange = viewModel::onQueryChange,
-                onFilterClick = { },
+                onFilterClick = { navController.navigate("filtros") },
                 modifier = Modifier
                     .align(Alignment.TopCenter)
                     .statusBarsPadding()

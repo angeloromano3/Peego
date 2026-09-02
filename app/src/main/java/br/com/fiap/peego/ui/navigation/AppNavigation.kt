@@ -21,6 +21,10 @@ import br.com.fiap.peego.model.CondicoesRecentes
 import br.com.fiap.peego.model.Informacoes
 import br.com.fiap.peego.ui.screens.bathroomdetail.BathroomDetailScreen
 import br.com.fiap.peego.ui.screens.avaliacao.AvaliacaoScreen
+import br.com.fiap.peego.ui.screens.explore.ExploreScreen
+import br.com.fiap.peego.ui.screens.lista.ListaScreen
+import br.com.fiap.peego.ui.screens.contribuir.ContribuirScreen
+import br.com.fiap.peego.ui.screens.FilterScreen
 
 object Rotas {
     const val LOGIN = "login"
@@ -28,6 +32,10 @@ object Rotas {
     const val PERMISSAO_LOCALIZACAO = "permissao_localizacao"
     const val DETALHES_BANHEIRO = "detalhes_banheiro"
     const val AVALIACAO = "avaliacao"
+    const val EXPLORAR = "explorar"
+    const val LISTA = "lista"
+    const val CONTRIBUIR = "contribuir"
+    const val FILTROS = "filtros"
 }
 
 @Composable
@@ -126,10 +134,14 @@ fun AppNavigation(modifier: Modifier = Modifier) {
         composable(Rotas.PERMISSAO_LOCALIZACAO) {
             LocationPermissionScreen(
                 permitirLocalizacao = {
-                    navController.navigate(Rotas.DETALHES_BANHEIRO)
+                    navController.navigate(Rotas.EXPLORAR) {
+                        popUpTo(Rotas.PERMISSAO_LOCALIZACAO) { inclusive = true }
+                    }
                 },
                 buscarPorEndereco = {
-                    navController.navigate(Rotas.DETALHES_BANHEIRO)
+                    navController.navigate(Rotas.EXPLORAR) {
+                        popUpTo(Rotas.PERMISSAO_LOCALIZACAO) { inclusive = true }
+                    }
                 }
             )
         }
@@ -164,6 +176,27 @@ fun AppNavigation(modifier: Modifier = Modifier) {
                 voltar = { navController.popBackStack() },
                 aoPublicar = { _, _, _, _, _ ->
                     Toast.makeText(context, "Avaliação publicada. Obrigado!", Toast.LENGTH_SHORT).show()
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        composable(Rotas.EXPLORAR) {
+            ExploreScreen(navController = navController)
+        }
+
+        composable(Rotas.LISTA) {
+            ListaScreen(navController = navController)
+        }
+
+        composable(Rotas.CONTRIBUIR) {
+            ContribuirScreen(voltar = { navController.popBackStack() })
+        }
+
+        composable(Rotas.FILTROS) {
+            FilterScreen(
+                voltar = { navController.popBackStack() },
+                aplicarFiltros = { _, _, _, _, _ ->
                     navController.popBackStack()
                 }
             )

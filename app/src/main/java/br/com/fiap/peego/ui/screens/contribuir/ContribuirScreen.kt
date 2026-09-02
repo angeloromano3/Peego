@@ -11,6 +11,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AddAPhoto
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -30,7 +31,7 @@ import br.com.fiap.peego.ui.theme.VerdePrimario
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContribuirScreen() {
+fun ContribuirScreen(voltar: () -> Unit = {}) {
     var nome by remember { mutableStateOf("") }
     var endereco by remember { mutableStateOf("") }
     var isAcessivel by remember { mutableStateOf(false) }
@@ -56,6 +57,11 @@ fun ContribuirScreen() {
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(R.string.contribuir_title), fontFamily = Poppins, fontWeight = FontWeight.Bold) },
+                navigationIcon = {
+                    IconButton(onClick = voltar) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Voltar")
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.White)
             )
         }

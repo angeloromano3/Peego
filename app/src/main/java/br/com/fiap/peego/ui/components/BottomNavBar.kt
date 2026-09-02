@@ -1,10 +1,7 @@
 package br.com.fiap.peego.ui.components
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -65,8 +62,6 @@ private fun NavItem(
         horizontalArrangement = Arrangement.spacedBy(6.dp)
     ) {
         Icon(icon, contentDescription = label, tint = contentColor, modifier = Modifier.size(22.dp))
-        AnimatedVisibility(visible = selected, enter = fadeIn(tween(200)), exit = fadeOut(tween(200))) {
-            Text(text = label, color = contentColor, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
-        }
+        Text(text = label, color = contentColor, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
     }
 }
